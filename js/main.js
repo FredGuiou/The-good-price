@@ -7,18 +7,26 @@ var compteur = 0;
 
 var reponse = prompt("Donnes moi le juste prix ?");
 
-reponse = parseInt(reponse);
+reponse = parseInt(reponse, 10);
+
+if(isNaN(reponse)) {
+    alert("Désolé ! Ce n'est pas un nombre !")
+}
+
+if(reponse === null) {
+    break;
+}
 
 while(reponse != hidenprice){
     
     if(reponse > hidenprice){
-        alert("Non, c'est plus petit !");
+        alert("Non, c'est moins !");
         reponse = prompt("Donnes moi le juste prix ?");
         compteur++
     }
     
     else{
-        alert("Non, C'est plus grand !");
+        alert("Non, C'est plus !");
         reponse = prompt("Donnes moi le juste prix ?");
         compteur++
     }
